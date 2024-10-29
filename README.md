@@ -6,6 +6,7 @@ To run the code, open the Anaconda Prompt terminal and execute the following lin
 > conda activate earthdata
 ```
 
+Download the `download_modis.py` script and locate it in the terminal window. Downloading the MODIS data is then fairly straight forward:
 
 ```
 > python download_modis.py -n VOLCANO_NAME -b LON_MIN LAT_MIN LON_MAX LAT_MAX  -t START_DATE END_DATE -d DOWNLOAD_DIRECTORY
