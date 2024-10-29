@@ -5,10 +5,10 @@ import earthaccess
 # Initiate the argument parser.
 parser = argparse.ArgumentParser()
 # Add arguments.
-parser.add_argument("-n", "--name", action="store", type=str,# required=True,
-                    help="The volcano name.", default="Redoubt")
-parser.add_argument("-b", "--bbox", action="store", nargs=4, type=float,# required=True,
-                    help="The bounding box coordinates lower_left_lon, lower_left_lat, upper_right_lon, upper_right_lat.", default=(-152.2, 61.2, -152.1, 61.4))
+parser.add_argument("-n", "--name", action="store", type=str, required=True,
+                    help="The volcano name.")
+parser.add_argument("-b", "--bbox", action="store", nargs=4, type=float, required=True,
+                    help="The bounding box coordinates lower_left_lon, lower_left_lat, upper_right_lon, upper_right_lat.")
 parser.add_argument("-t", "--temp", action="store", nargs=2, type=str, required=True,
                     help="The start and end times as YYYY-MM-DD.")
 parser.add_argument("-d", "--dir", action="store", type=str, required=True,
