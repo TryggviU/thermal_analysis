@@ -1,4 +1,4 @@
-# thermal_analysis
+# Thermal analysis with MODIS spectral radiance data
 
 To run the code, open the Anaconda Prompt terminal and execute the following lines:
 
