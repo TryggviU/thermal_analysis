@@ -19,12 +19,12 @@ args.bbox = tuple(args.bbox)
 args.temp = tuple(args.temp)
 
 products = {
-	"MOD021KM": f"MODIS_Level_1B_{args.name}_Terra",
-	"MYD021KM": f"MODIS_Level_1B_{args.name}_Aqua",
-	"MOD03": f"MODIS_Geolocation_{args.name}_Terra",
-	"MYD03": f"MODIS_Geolocation_{args.name}_Aqua",
-	"MOD35_L2": f"MODIS_Cloud_mask_{args.name}_Terra",
-	"MYD35_L2": f"MODIS_Cloud_mask_{args.name}_Aqua",
+	"MOD021KM": f"MODIS_Level_1B_{args.name}_Terra1",
+	#"MYD021KM": f"MODIS_Level_1B_{args.name}_Aqua1",
+	#"MOD03": f"MODIS_Geolocation_{args.name}_Terra1",
+	#"MYD03": f"MODIS_Geolocation_{args.name}_Aqua1",
+	#"MOD35_L2": f"MODIS_Cloud_mask_{args.name}_Terra1",
+	#"MYD35_L2": f"MODIS_Cloud_mask_{args.name}_Aqua1",
 }
 
 # Provide the user's credentials.
