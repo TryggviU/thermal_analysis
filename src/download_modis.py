@@ -29,26 +29,12 @@ products = {
 
 # Provide the user's credentials.
 earthaccess.login()
-    
-    
-def mkdir_ifnot_exist(path, path_proj):
-    if os.path.exists(path):
-        return path
-    else:
-        # If the parent directory exists, then create the subdirectory.
-        if os.path.exists(os.path.dirname(path)):
-            if not os.path.exists(path):
-                os.mkdir(path)
-
-        # Else create the parent directory(ies) of the path recursively.
-        else:
-            mkdir_ifnot_exist(os.path.dirname(path), path_proj)
-            mkdir_ifnot_exist(path, path_proj)
-
-        return path
 
 
 def download_product(product, dir_download, bounding_box=args.bbox, temporal=args.temp, count=-1):
+    if not os.path.exists(dir_download):
+        os.mkdir(dir_download)
+    
     results = earthaccess.search_data(
         short_name=product,
         bounding_box=bounding_box,
@@ -66,14 +52,9 @@ def main():
     for product in products:
         print(product)
         
-        dir_download = mkdir_ifnot_exist(
-            path=os.path.join(args.dir, products[product]),
-            path_proj=args.dir
-        )
-        
         download_product(
             product=product,
-            dir_download=dir_download
+            dir_download=os.path.join(args.dir, products[product])
         )
         
 
