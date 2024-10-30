@@ -1,7 +1,12 @@
 # Thermal analysis with MODIS spectral radiance data
 
-To run the code, open the Anaconda Prompt terminal and execute the following lines:
-
+For the first time you plan to use the code, open the Anaconda Prompt terminal and execute these lines:
+```
+> conda create --name earthdata
+> conda activate earthdata
+> conda install -c conda-forge earthaccess
+```
+To run the code after the first time, you will only need to activate the environment:
 ```
 > conda activate earthdata
 ```
