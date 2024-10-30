@@ -19,9 +19,9 @@ Download the `download_modis.py` script and locate it in the terminal window. Do
 
 | Variable | Input example |
 |----------|---------------|
-| `VOLCANO_NAME`| Redoubt |
-| `LON_MIN` `LAT_MIN`... | -152.2 64.2 ... |
+| `VOLCANO_NAME`| Spurr |
+| `LON_MIN` `LAT_MIN` `LON_MAX` `LAT_MAX` | -152.2 61.2 -152.1 61.4 |
 | `START_DATE` `END_DATE` | "2024-06-17" "2024-06-18" |
-| `DOWNLOAD_DIRECTORY` | "C:\\Users\\USER\\Downloads\Redoubt" |
+| `DOWNLOAD_DIRECTORY` | "C:\\Users\\USER\\Downloads\Spurr" |
 
 Note that if you only want a single date then `START_DATE` and  `END_DATE` must be the same.
