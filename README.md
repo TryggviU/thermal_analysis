@@ -36,6 +36,15 @@ Downloading the MODIS data is then fairly straight forward:
 ```
 > python download_modis.py -n VOLCANO_NAME -b LON_MIN LAT_MIN LON_MAX LAT_MAX  -t START_DATE END_DATE -d DOWNLOAD_DIRECTORY
 ```
+> It may occur that some files will not download for various reasons.
+
+1. If multiple files failed to download - rerun the above script.
+2. If only several files (<100) failed to download - continue on to below instructions.
+
+To retry downloading the missing files execute the following script:
+```
+> python download_missing_modis.py -n VOLCANO_NAME -b LON_MIN LAT_MIN LON_MAX LAT_MAX  -t START_DATE END_DATE -d DOWNLOAD_DIRECTORY
+```
 
 | Variable | Input example |
 |----------|---------------|
