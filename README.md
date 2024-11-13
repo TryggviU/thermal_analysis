@@ -18,32 +18,55 @@ ___
 
 ## Running the code
 
+### Setup
+
 For the first time you plan to use the code, open the Anaconda Prompt terminal and execute these lines to create a virtual environment (named `earthdata` here) that will store the necessary python packages:
-```
+```python
 > conda create --name earthdata
 > conda activate earthdata
 > conda install -c conda-forge earthaccess
 ```
 Download the [download_modis.py](src/download_modis.py) script. It does not really matter where you store the script on your computer.
 
+### Download data
+
 To run the code for subsequent times, you will only need to activate the virtual environment:
-```
+```python
 > conda activate earthdata
 ```
 
 Downloading the MODIS data is then fairly straight forward:
 
-```
+```python
 > python download_modis.py -n VOLCANO_NAME -b LON_MIN LAT_MIN LON_MAX LAT_MAX  -t START_DATE END_DATE -d DOWNLOAD_DIRECTORY
 ```
-> It may occur that some files will not download for various reasons.
+
+### Re-attempt failed downloads
+
+It may occur that some files will not download for various reasons.
 
 1. If multiple files failed to download - rerun the above script.
 2. If only several files (<100) failed to download - continue on to below instructions.
 
 To retry downloading the missing files execute the following script:
-```
+```python
 > python download_missing_modis.py -n VOLCANO_NAME -b LON_MIN LAT_MIN LON_MAX LAT_MAX  -t START_DATE END_DATE -d DOWNLOAD_DIRECTORY
+```
+
+### Variables
+
+For both download scripts it is possible to provide an `.txt` file with the input parameters instead of listing them out:
+```python
+> python download_modis.py -f INPUT.txt
+> python download_missing_modis.py -f INPUT.txt
+```
+
+The `INPUT.txt` must look like this:
+```
+VOLCANO_NAME
+LON_MIN LAT_MIN LON_MAX LAT_MAX
+START_DATE END_DATE
+DOWNLOAD DIRECTORY
 ```
 
 | Variable | Input example |
@@ -51,7 +74,7 @@ To retry downloading the missing files execute the following script:
 | `VOLCANO_NAME`| `Spurr` |
 | `LON_MIN` `LAT_MIN` `LON_MAX` `LAT_MAX` | `-152.2` `61.2` `-152.1` `61.4` |
 | `START_DATE` `END_DATE`[^1] | `2024-06-17` `2024-06-18` |
-| `DOWNLOAD_DIRECTORY` | `"C:\Users\USER\Downloads\Spurr"`[^2] |
+| `DOWNLOAD_DIRECTORY` | `"data\Spurr"`[^2] |
 
 [^1]: Note that if you only want a single date then `START_DATE` and  `END_DATE` must be the same.
 [^2]: I recommend using quotation marks around the path to the desired download directory, especially if the path contains whitespaces.
